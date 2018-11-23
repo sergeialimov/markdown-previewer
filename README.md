@@ -1,3 +1,10 @@
+# Markdown previwer
+Markdown previwer is the one of projects that should be implemented while passing Front End Libraries Certification (300 hours) at [https://learn.freecodecamp.org/](https://learn.freecodecamp.org/)
+
+The list of implemented [user stories](https://learn.freecodecamp.org/front-end-libraries/front-end-libraries-projects/build-a-markdown-previewer/).
+
+Every project was tested with number of UI autotests.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
