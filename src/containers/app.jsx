@@ -1,11 +1,11 @@
-import App from './../components/app.js';
-import { submitNewNum } from './../actions/submitNewNum.js';
+import App from './../components/app.jsx';
+// import { submitNewNum } from './../actions/submitNewNum.js';
 import { connect, Provider } from 'react-redux';
-import { numReducer } from './../reducers/num.js';
+import { reducer } from './../reducers/reducer.js';
 import { createStore } from 'redux';
 import React, { Component } from 'react';
 
-const store = createStore(numReducer);
+const store = createStore(reducer);
 
 const mapStateToProps = (state=0) => {
   return {
@@ -16,7 +16,7 @@ const mapStateToProps = (state=0) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     updateNum: (num) => {
-      dispatch(submitNewNum(num));
+      // dispatch(submitNewNum(num));
     }
   }
 };
