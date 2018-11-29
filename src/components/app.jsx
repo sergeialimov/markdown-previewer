@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import Editor from './editor.jsx';
-import Previewer from './previewer.jsx';
+import TopPane from './topPane.jsx';
+import BottomPane from './bottomPane.jsx';
 import './../styles/app.css';
 
 class App extends Component {
   render() {
     return (
       <div className="app">
-        <Editor />
-        <Previewer />
+        <TopPane />
+        <BottomPane />
       </div>
     )
   }
