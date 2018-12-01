@@ -24,6 +24,18 @@
   margin-right: auto;
   margin-top: 0px;
   background-color: #C0D8D7;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.title {
+  margin-top: 3px;
+  margin-left: 5px;
+}
+
+input {
+  margin-top: 3px;
 }
 
 
