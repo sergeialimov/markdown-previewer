@@ -7,10 +7,11 @@ class TopPane extends Component {
     return (
       <div class="topPane">
         <div class="editor">
-        <div class="topBar">
-          <p class="title">Editor</p>
-          <input type="image" src={expandImg} width="20" height="20" alt="Expand"></input>
-        </div>
+          <div class="topBar">
+            <p class="title">Editor</p>
+            <input type="image" src={expandImg} width="20" height="20" alt="Expand"/>
+          </div>
+        <textarea id="editor"></textarea>
       </div>
     </div>
     )
@@ -18,3 +19,4 @@ class TopPane extends Component {
 }
 
 export default TopPane;
+
