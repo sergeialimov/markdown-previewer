@@ -5,10 +5,10 @@ import expandImg from './../img/expand.png';
 class TopPane extends Component {
   render() {
     return (
-      <div class="topPane">
-        <div class="editor">
-          <div class="topBar">
-            <p class="title">Editor</p>
+      <div className="topPane">
+        <div className="editor">
+          <div className="topBar">
+            <p className="title">Editor</p>
             <input type="image" src={expandImg} width="20" height="20" alt="Expand"/>
           </div>
         <textarea id="editor"></textarea>
