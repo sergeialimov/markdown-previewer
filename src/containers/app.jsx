@@ -1,22 +1,26 @@
 import App from './../components/app.jsx';
-// import { submitNewNum } from './../actions/submitNewNum.js';
+import { action } from './../actions/action.js';
 import { connect, Provider } from 'react-redux';
 import { reducer } from './../reducers/reducer.js';
 import { createStore } from 'redux';
 import React, { Component } from 'react';
 
-const store = createStore(reducer);
+const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
-const mapStateToProps = (state=0) => {
+// const defaultText = {
+//   text: 'some text'
+// }
+
+const mapStateToProps = (state = 0) => {
   return {
-    num: state
+    text: state
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    updateNum: (num) => {
-      // dispatch(submitNewNum(num));
+    updateNum: (text) => {
+      dispatch(action(text));
     }
   }
 };
