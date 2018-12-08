@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import TopPane from './topPane.jsx';
-import BottomPane from './bottomPane.jsx';
+import TopPane from './../containers/topPane.jsx';
+import BottomPane from './../containers/bottomPane.jsx';
 import './../styles/app.css';
 
 class App extends Component {
