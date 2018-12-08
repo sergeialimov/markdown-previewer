@@ -5,13 +5,14 @@ import { reducer } from './../reducers/reducer.js';
 import { createStore } from 'redux';
 import React, { Component } from 'react';
 
-const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const extenstion = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+const store = createStore(reducer, extenstion);
 
-// const defaultText = {
-//   text: 'some text'
-// }
+const defaultText = {
+  text: 'some text'
+}
 
-const mapStateToProps = (state = 0) => {
+const mapStateToProps = (state = defaultText) => {
   return {
     text: state
   }
