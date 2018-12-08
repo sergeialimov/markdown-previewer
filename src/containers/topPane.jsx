@@ -1,8 +1,8 @@
+import { connect } from 'react-redux';
 import TopPane from './../components/topPane.jsx';
 import { action } from './../actions/action.js';
-import { connect } from 'react-redux';
 
-const mapStateToProps = (state = 0) => {
+const mapStateToProps = (state) => {
   return {
     text: state
   }
