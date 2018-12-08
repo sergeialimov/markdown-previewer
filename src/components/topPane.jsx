@@ -3,6 +3,15 @@ import './../styles/topPane.css';
 import expandImg from './../img/expand.png';
 
 class TopPane extends Component {
+  constructor(props) {
+    super(props);
+    this.onChange = this.onChange.bind(this)
+  }
+
+  onChange(event) {
+    this.props.translate(event.target.value);
+  }
+
   render() {
     return (
       <div className="topPane">
@@ -11,7 +20,7 @@ class TopPane extends Component {
             <p className="title">Editor</p>
             <input type="image" src={expandImg} width="20" height="20" alt="Expand"/>
           </div>
-        <textarea id="editor"></textarea>
+        <textarea id="editor" onChange={this.onChange}>{this.props.text}</textarea>
       </div>
     </div>
     )
@@ -19,4 +28,3 @@ class TopPane extends Component {
 }
 
 export default TopPane;
-
