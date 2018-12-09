@@ -1,6 +1,7 @@
-const defaultText = 'some text';
-
-export const reducer = (state = defaultText, action) => {
+const initialState = {
+  text: 'some text',
+}
+export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case 'TEXT':
       return action.text;
