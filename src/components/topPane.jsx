@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './../styles/topPane.css';
 import expandImg from './../img/expand.png';
 
@@ -27,4 +28,9 @@ class TopPane extends Component {
   }
 }
 
-export default TopPane;
+const mapStateToProps = (state) => {
+  const { text } = state;
+  return text;
+}
+
+export default connect(mapStateToProps)(TopPane);

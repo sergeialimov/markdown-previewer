@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './../styles/bottomPane.css';
 import expandImg from './../img/expand.png';  
 
@@ -11,11 +12,16 @@ class BottomPane extends Component {
             <p className="titlePreview">Previewer</p>
             <input type="image" src={expandImg} width="20" height="20" alt="Expand"/>
           </div>
-          <p>some text</p>
+          <p>{this.props.text}</p>
         </div>
       </div>
     )
   }
 }
 
-export default BottomPane;
+const mapStateToProps = (state) => {
+  const { text } = state;
+  return text;
+}
+
+export default connect(mapStateToProps)(BottomPane);
