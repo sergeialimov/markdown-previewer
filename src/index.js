@@ -1,6 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AppWrapper from './containers/app.jsx';
+import { Provider } from "react-redux";
+import App from './components/app.jsx';
 import './styles/index.css';
+import store from "./store";
 
-ReactDOM.render(<AppWrapper />, document.getElementById('root'));
+ReactDOM.render(
+  <Provider store={store}>
+    <App />,
+  </Provider>,
+  document.getElementById('root')
+);
