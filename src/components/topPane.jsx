@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './../styles/topPane.css';
+import { action } from '../actions/action.js';
 import expandImg from './../img/expand.png';
 
 class TopPane extends Component {
   constructor(props) {
     super(props);
-    this.onChange = this.onChange.bind(this)
   }
 
-  onChange(event) {
-    this.props.translate(event.target.value);
-  }
   render () {
     return (
       <div className="topPane">
@@ -20,7 +17,9 @@ class TopPane extends Component {
             <p className="title">Editor</p>
             <input type="image" src={expandImg} width="20" height="20" alt="Expand"/>
           </div>
-        <textarea id="editor" onChange={this.onChange}>{this.props.text}</textarea>
+        <textarea id="editor" onChange={ e => this.props.updateText(e.target.value)}>
+          {this.props.text}
+        </textarea>
       </div>
     </div>
     )
@@ -32,4 +31,12 @@ const mapStateToProps = state => {
   return {text};
 }
 
-export default connect(mapStateToProps)(TopPane);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updateText: (text) => {
+      dispatch(action(text));
+    }
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(TopPane);

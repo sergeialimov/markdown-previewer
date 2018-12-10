@@ -21,7 +21,7 @@ class BottomPane extends Component {
 
 const mapStateToProps = (state) => {
   const { text } = state;
-  return {text};
+  return { text };
 }
 
 export default connect(mapStateToProps)(BottomPane);
