@@ -5,10 +5,6 @@ import { action } from '../actions/action.js';
 import expandImg from './../img/expand.png';
 
 class TopPane extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render () {
     return (
       <div className="topPane">
