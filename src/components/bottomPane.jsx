@@ -4,9 +4,16 @@ import './../styles/bottomPane.css';
 import expandImg from './../img/expand.png';
 import marked from 'marked';
 
+marked.setOptions({
+  breaks: true,
+});
+
+const renderer = new marked.Renderer();
+renderer.link = ( href, title, text ) => `<a target="_blank" href="${ href }" title="${ title }">${ text }</a>`;
+
 class BottomPane extends Component {
   render() {
-    const convertedText = marked(this.props.text);
+    const convertedText = marked(this.props.text, { renderer:renderer });
 
     function createMarkup() {
       return {__html: convertedText};
