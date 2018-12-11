@@ -1,5 +1,7 @@
+import defaultText from './../defaultText.js'; 
+
 const initialState = {
-  text: 'some text',
+  text: defaultText,
 }
 
 export const reducer = (state=initialState, action) => {
