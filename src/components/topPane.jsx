@@ -13,9 +13,11 @@ class TopPane extends Component {
             <p className="title">Editor</p>
             <input type="image" src={expandImg} width="20" height="20" alt="Expand"/>
           </div>
-        <textarea id="editor" onChange={ e => this.props.updateText(e.target.value)}>
-          {this.props.text}
-        </textarea>
+        <textarea 
+          id="editor" 
+          onChange={ e => this.props.updateText(e.target.value)} 
+          value= {this.props.text}
+        />
       </div>
     </div>
     )
