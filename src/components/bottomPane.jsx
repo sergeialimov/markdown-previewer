@@ -19,7 +19,7 @@ const styles = {
       "marginRight": "auto",
     },
     topBar: {
-      "width": '100%',
+      "width": '100% - 1px',
     }
   },
   notExpanded: {
