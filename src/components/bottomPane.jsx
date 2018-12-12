@@ -11,6 +11,29 @@ marked.setOptions({
 const renderer = new marked.Renderer();
 renderer.link = ( href, title, text ) => `<a target="_blank" href="${ href }" title="${ title }">${ text }</a>`;
 
+const styles = {
+  expanded : {
+    previewer: {
+      "width": '100%',
+      "marginLeft": "20px",
+      "marginRight": "20px",
+    },
+    topBar: {
+      "width": '100%',
+    }
+  },
+  notExpanded: {
+    previewer: {
+      "maxWidth": "800px",
+      "marginLeft": "auto",
+      "marginRight": "auto",
+    },
+    topBar: {
+      "maxWidth": '800px',
+    }
+  }
+};
+
 class BottomPane extends Component {
   constructor(props) {
     super(props);
@@ -33,17 +56,14 @@ class BottomPane extends Component {
       return {__html: convertedText};
     }
 
-    const style = {
-      "backgroundColor": 'quotes[this.props.num].color',
-      "transition": "background-color 2s",
-    };
+    const currentStyles = this.state.isExpanded ? styles.expanded : styles.notExpanded;
 
     return (
       <div className="bottomPane">
-        <div className="previewer">
-          <div className="topBarPreview">
+        <div className="previewer" style={currentStyles.previewer}>
+          <div className="topBarPreview" style={currentStyles.topBar}>
             <p className="titlePreview">Previewer</p>
-            <input id="expandPreview" type="image" src={expandImg} alt="Expand" style={style}
+            <input id="expandPreview" type="image" src={expandImg} alt="Expand"
               onClick={this.onClick}/>
           </div>
           <div id="preview" dangerouslySetInnerHTML= {createMarkup()}></div>
