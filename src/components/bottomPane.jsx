@@ -12,6 +12,20 @@ const renderer = new marked.Renderer();
 renderer.link = ( href, title, text ) => `<a target="_blank" href="${ href }" title="${ title }">${ text }</a>`;
 
 class BottomPane extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isExpanded: false
+    }
+    this.onClick = this.onClick.bind(this)
+  }
+
+  onClick() {
+    this.setState({
+      isExpanded: !this.state.isExpanded,
+    });
+  }
+
   render() {
     const convertedText = marked(this.props.text, { renderer:renderer });
 
@@ -19,12 +33,18 @@ class BottomPane extends Component {
       return {__html: convertedText};
     }
 
+    const style = {
+      "backgroundColor": 'quotes[this.props.num].color',
+      "transition": "background-color 2s",
+    };
+
     return (
       <div className="bottomPane">
         <div className="previewer">
           <div className="topBarPreview">
             <p className="titlePreview">Previewer</p>
-            <input type="image" src={expandImg} width="20" height="20" alt="Expand"/>
+            <input id="expandPreview" type="image" src={expandImg} alt="Expand" style={style}
+              onClick={this.onClick}/>
           </div>
           <div id="preview" dangerouslySetInnerHTML= {createMarkup()}></div>
         </div>
