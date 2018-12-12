@@ -1,10 +1,5 @@
-.bottomPane {
-  /* margin-left: 30px;
-  margin-right: 30px; */
-}
-
 .previewer {
-  min-width: 350px;
+  min-width: 400px;
   height: 1250px;
   margin-top: 20px;
   background-color: #C0D8D7;
@@ -18,7 +13,7 @@
 } */
 
 .topBarPreview {
-  min-width: 350px;
+  min-width: 400px;
   height: 25px;
   border: 1px gray solid;
   margin-top: 0px;
