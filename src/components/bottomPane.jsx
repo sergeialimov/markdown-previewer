@@ -14,9 +14,9 @@ renderer.link = ( href, title, text ) => `<a target="_blank" href="${ href }" ti
 const styles = {
   expanded : {
     previewer: {
-      "width": '100%',
-      "marginLeft": "20px",
-      "marginRight": "20px",
+      "width": '99%',
+      "marginLeft": "auto",
+      "marginRight": "auto",
     },
     topBar: {
       "width": '100%',
