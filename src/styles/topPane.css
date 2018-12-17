@@ -38,7 +38,6 @@ input {
 }
 
 textarea {
-  /* margin-top: 25px; */
   resize: vertical;
   width: 99%;
   min-height: 220px;

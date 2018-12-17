@@ -39,6 +39,7 @@ class TopPane extends Component {
           id="editor" 
           onChange={ e => this.props.updateText(e.target.value)} 
           value= {this.props.text}
+          style={currentStyles.textarea}
         />
       </div>
     </div>

@@ -29,6 +29,9 @@ const styles = {
     },
     topBar: {
       "width": '100% - 1px',
+    },
+    textarea: {
+      "height": "100vh",
     }
   },
 };
