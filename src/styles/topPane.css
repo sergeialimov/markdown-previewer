@@ -7,7 +7,7 @@
   min-width: 350px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   /* scroll */
   overflow: auto;
 }
@@ -38,7 +38,7 @@ input {
 }
 
 textarea {
-  margin-top: 25px;
+  /* margin-top: 25px; */
   resize: vertical;
   width: 99%;
   min-height: 220px;
