@@ -21,18 +21,24 @@ class TopPane extends Component {
   }
   
   render () {
+    const currentStyles = this.state.isExpanded ? styles.expanded : styles.notExpanded;
     return (
       <div className="topPane">
-        <div className="editor">
-          <div className="topBar">
+        <div className="editor" style={currentStyles.editor}>
+          <div className="topBar" style={currentStyles.topBar}>
             <p className="title">Editor</p>
-            <input type="image" src={expandImg} width="20" height="20" alt="Expand"/>
+            <input 
+            type="image" 
+            src={expandImg} 
+            width="20" 
+            height="20" 
+            alt="Expand"
+            onClick={this.onClick}/>
           </div>
         <textarea 
           id="editor" 
           onChange={ e => this.props.updateText(e.target.value)} 
           value= {this.props.text}
-          onClick={this.onClick}
         />
       </div>
     </div>
