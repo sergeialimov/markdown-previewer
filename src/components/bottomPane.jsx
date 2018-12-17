@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './../styles/bottomPane.css';
+import styles from './../styles/dynamicStyles.js';
 import expandImg from './../img/expand.png';
 import marked from 'marked';
 
@@ -10,31 +11,6 @@ marked.setOptions({
 
 const renderer = new marked.Renderer();
 renderer.link = ( href, title, text ) => `<a target="_blank" href="${ href }" title="${ title }">${ text }</a>`;
-
-const styles = {
-  expanded : {
-    previewer: {
-      "position": "absolute",
-      "top": "0",
-      "width": '99%',
-      "marginRight": "auto",
-      "marginLeft": "auto",
-    },
-    topBar: {
-      "width": '100% - 1px',
-    }
-  },
-  notExpanded: {
-    previewer: {
-      "maxWidth": "800px",
-      "marginLeft": "auto",
-      "marginRight": "auto",
-    },
-    topBar: {
-      "maxWidth": '800px',
-    }
-  }
-};
 
 class BottomPane extends Component {
   constructor(props) {
