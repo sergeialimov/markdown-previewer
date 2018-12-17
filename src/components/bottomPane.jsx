@@ -17,8 +17,8 @@ const styles = {
       "position": "absolute",
       "top": "0",
       "width": '99%',
-      "marginLeft": "auto",
       "marginRight": "auto",
+      "marginLeft": "auto",
     },
     topBar: {
       "width": '100% - 1px',
