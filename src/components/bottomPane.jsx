@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './../styles/bottomPane.css';
-import styles from './../styles/dynamicStyles.js';
+import styles from './../styles/dynamicPreviewer.js';
 import expandImg from './../img/expand.png';
 import marked from 'marked';
 

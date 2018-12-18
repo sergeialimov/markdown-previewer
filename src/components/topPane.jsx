@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './../styles/topPane.css';
-import styles from './../styles/dynamicStyles.js';
+import styles from './../styles/dynamicEditor.js';
 import { action } from '../actions/action.js';
 import expandImg from './../img/expand.png';
 
