@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import './../styles/bottomPane.css';
 import styles from './../styles/dynamicPreviewer.js';
 import expandImg from './../img/expand.png';
+import { toggleEditor } from '../actions/toggleEditor.js';
 import marked from 'marked';
 
 marked.setOptions({
@@ -25,6 +26,7 @@ class BottomPane extends Component {
     this.setState({
       isExpanded: !this.state.isExpanded,
     });
+    this.props.toggleEditor();
   }
 
   render() {
@@ -56,4 +58,12 @@ const mapStateToProps = (state) => {
   return { text, previewerVisibility };
 }
 
-export default connect(mapStateToProps)(BottomPane);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    toggleEditor: () => {
+      dispatch(toggleEditor());
+    }
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(BottomPane);

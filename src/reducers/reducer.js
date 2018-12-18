@@ -19,6 +19,11 @@ export const reducer = (state=initialState, action) => {
         ...state,
         previewerVisibility: !state.previewerVisibility
       }
+    case 'TOGGLE_EDITOR':
+      return {
+        ...state,
+        editorVisibility: !state.editorVisibility
+      }
     default:
       return state;
   }
