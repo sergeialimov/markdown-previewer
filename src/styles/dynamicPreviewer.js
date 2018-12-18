@@ -5,8 +5,6 @@ const styles = {
       "marginLeft": "auto",
       "marginRight": "auto",
     },
-    topBar: {
-    }
   },
   expanded : {
     previewer: {
@@ -15,9 +13,6 @@ const styles = {
       "width": '99%',
       "marginRight": "auto",
       "marginLeft": "auto",
-    },
-    topBar: {
-      "width": '100% - 1px',
     },
   },
 };

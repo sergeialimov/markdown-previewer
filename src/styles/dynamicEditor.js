@@ -4,18 +4,14 @@ const styles = {
       "maxWidth": "600px",
       "height": "auto",
     },
-    topBar: {
-    }
   },
   expanded : {
     editor: {
       "width": '99%',
+      "height": "100vh - 20px",
       "marginRight": "auto",
       "marginLeft": "auto",
-      "height": "100vh",
-    },
-    topBar: {
-      "width": '100% - 1px',
+      // "marginBottom": "20px",
     },
     textarea: {
       "height": "100vh",
