@@ -2,10 +2,9 @@ const styles = {
   notExpanded: {
     editor: {
       "maxWidth": "600px",
-      "height": "250px",
+      "height": "auto",
     },
     topBar: {
-      "maxWidth": '800px',
     }
   },
   expanded : {
