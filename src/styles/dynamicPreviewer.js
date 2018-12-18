@@ -1,4 +1,9 @@
 const styles = {
+  bottomPane: {
+    hidden: {
+      "display": "none",
+    },
+  },
   notExpanded: {
     previewer: {
       "maxWidth": "800px",

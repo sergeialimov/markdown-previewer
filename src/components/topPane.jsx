@@ -3,13 +3,14 @@ import { connect } from 'react-redux';
 import './../styles/topPane.css';
 import styles from './../styles/dynamicEditor.js';
 import { action } from '../actions/action.js';
+import { togglePreviewer } from '../actions/togglePreviewer.js';
 import expandImg from './../img/expand.png';
 
 class TopPane extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isExpanded: false
+      isExpanded: false,
     }
     this.onClick = this.onClick.bind(this)
   }
@@ -18,12 +19,15 @@ class TopPane extends Component {
     this.setState({
       isExpanded: !this.state.isExpanded,
     });
+    this.props.togglePreviewer();
   }
   
   render () {
     const currentStyles = this.state.isExpanded ? styles.expanded : styles.notExpanded;
+    const visibility = this.props.editorVisibility ? styles.topPane.visible : styles.topPane.hidden;
+
     return (
-      <div className="topPane">
+      <div className="topPane" style={visibility}>
         <div className="editor" style={currentStyles.editor}>
           <div className="topBar" style={currentStyles.topBar}>
             <p className="title">Editor</p>
@@ -48,14 +52,17 @@ class TopPane extends Component {
 }
 
 const mapStateToProps = state => {
-  const { text } = state;
-  return {text};
+  const { text, editorVisibility } = state;
+  return {text, editorVisibility};
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     updateText: (text) => {
       dispatch(action(text));
+    },
+    togglePreviewer: () => {
+      dispatch(togglePreviewer());
     }
   }
 };

@@ -16,7 +16,7 @@ class BottomPane extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isExpanded: false
+      isExpanded: false,
     }
     this.onClick = this.onClick.bind(this)
   }
@@ -35,9 +35,9 @@ class BottomPane extends Component {
     }
 
     const currentStyles = this.state.isExpanded ? styles.expanded : styles.notExpanded;
-
+    const visibility = this.props.previewerVisibility ? styles.bottomPane.visible : styles.bottomPane.hidden;
     return (
-      <div className="bottomPane">
+      <div className="bottomPane" style={visibility}>
         <div className="previewer" style={currentStyles.previewer}>
           <div className="topBarPreview" style={currentStyles.topBar}>
             <p className="titlePreview">Previewer</p>
@@ -52,8 +52,8 @@ class BottomPane extends Component {
 }
 
 const mapStateToProps = (state) => {
-  const { text } = state;
-  return { text };
+  const { text, previewerVisibility } = state;
+  return { text, previewerVisibility };
 }
 
 export default connect(mapStateToProps)(BottomPane);

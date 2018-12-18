@@ -1,4 +1,11 @@
 const styles = {
+  topPane: {
+    hidden: {
+      "display": "none",
+    },
+    visible: {
+    }
+  },
   notExpanded: {
     editor: {
       "maxWidth": "600px",
@@ -11,7 +18,6 @@ const styles = {
       "height": "100vh - 20px",
       "marginRight": "auto",
       "marginLeft": "auto",
-      // "marginBottom": "20px",
     },
     textarea: {
       "height": "100vh",

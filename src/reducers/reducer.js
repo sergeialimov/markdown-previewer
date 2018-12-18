@@ -1,7 +1,10 @@
+import store from '../store';
 import defaultText from './../defaultText.js'; 
 
 const initialState = {
   text: defaultText,
+  editorVisibility: true,
+  previewerVisibility: true,
 }
 
 export const reducer = (state=initialState, action) => {
@@ -10,6 +13,11 @@ export const reducer = (state=initialState, action) => {
       return {
         ...state,
         text: action.text
+      }
+    case 'TOGGLE_PREVIEWER':
+      return {
+        ...state,
+        previewerVisibility: !state.previewerVisibility
       }
     default:
       return state;
