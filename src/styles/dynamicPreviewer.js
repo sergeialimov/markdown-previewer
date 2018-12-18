@@ -6,7 +6,6 @@ const styles = {
       "marginRight": "auto",
     },
     topBar: {
-      "maxWidth": '800px',
     }
   },
   expanded : {
