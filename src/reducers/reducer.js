@@ -1,4 +1,3 @@
-import store from '../store';
 import defaultText from './../defaultText.js'; 
 
 const initialState = {
