@@ -4,6 +4,7 @@ import './../styles/topPane.css';
 import styles from './../styles/dynamicEditor.js';
 import { action } from '../actions/action.js';
 import { togglePreviewer } from '../actions/togglePreviewer.js';
+import minimizeImg from './../img/minimize.png';
 import expandImg from './../img/expand.png';
 
 class TopPane extends Component {
@@ -25,6 +26,9 @@ class TopPane extends Component {
   render () {
     const currentStyles = this.state.isExpanded ? styles.expanded : styles.notExpanded;
     const visibility = this.props.editorVisibility ? styles.topPane.visible : styles.topPane.hidden;
+    const currentImg = this.state.isExpanded ? minimizeImg : expandImg;
+    const currentAlt = this.state.isExpanded ? 'Minimize' : 'Expand';
+    const currentBackgroundColor = '';
 
     return (
       <div className="topPane" style={visibility}>
@@ -32,11 +36,12 @@ class TopPane extends Component {
           <div className="topBar" style={currentStyles.topBar}>
             <p className="title">Editor</p>
             <input 
+            id="expandButton"
             type="image" 
-            src={expandImg} 
+            src={currentImg}
             width="20" 
             height="20" 
-            alt="Expand"
+            alt={currentAlt}
             onClick={this.onClick}/>
           </div>
         <textarea 
