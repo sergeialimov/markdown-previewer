@@ -9,8 +9,11 @@ const styles = {
   notExpanded: {
     editor: {
       "maxWidth": "600px",
-      "height": "auto",
     },
+    textarea: {
+      "minHeight": "225px",
+      "width": "calc(100% - 11px)",
+    }
   },
   expanded : {
     editor: {
@@ -20,6 +23,7 @@ const styles = {
       "marginLeft": "auto",
     },
     textarea: {
+      "width": "calc(100% - 6px)",
       "height": "100vh",
     }
   },
