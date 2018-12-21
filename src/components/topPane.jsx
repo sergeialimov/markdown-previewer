@@ -28,7 +28,6 @@ class TopPane extends Component {
     const visibility = this.props.editorVisibility ? styles.topPane.visible : styles.topPane.hidden;
     const currentImg = this.state.isExpanded ? minimizeImg : expandImg;
     const currentAlt = this.state.isExpanded ? 'Minimize' : 'Expand';
-    const currentBackgroundColor = '';
 
     return (
       <div className="topPane" style={visibility}>
