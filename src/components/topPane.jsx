@@ -38,8 +38,6 @@ class TopPane extends Component {
             id="expandButton"
             type="image" 
             src={currentImg}
-            width="20" 
-            height="20" 
             alt={currentAlt}
             onClick={this.onClick}/>
           </div>
